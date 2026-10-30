@@ -3,8 +3,8 @@ import gradio as gr
 from agent import get_agent_response
 
 def create_gradio_interface():
-    with gr.Blocks(title="🤖 Chatbot with Knowledge Base") as demo:
-        gr.Markdown("# 🤖 Chatbot with Knowledge Base")
+    with gr.Blocks(title="Chatbot with Knowledge Base") as demo:
+        gr.Markdown("# Chatbot with Knowledge Base")
         
         history = gr.Chatbot(
             elem_id="chatbot",
@@ -17,7 +17,7 @@ def create_gradio_interface():
         
         msg = gr.Textbox(
             label="Message",
-            placeholder="Ask me anything...",
+            placeholder="Ask me ...",
             show_label=False,
             container=False,
             scale=7
@@ -63,7 +63,7 @@ def create_gradio_interface():
 if __name__ == "__main__":
     app = create_gradio_interface()
     app.launch(
-        server_name="0.0.0.0",
+        server_name="127.0.0.1",
         server_port=8080,
         share=False,
     )
